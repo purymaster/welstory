@@ -1,0 +1,179 @@
+<!doctype html>
+<html lang="ko">
+<head>
+<meta charset="utf-8">
+<meta http-equiv="X-UA-Compatible" content="IE=edge, chrome=1">
+<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, minimum-scale=1, user-scalable=no">
+<title>삼성웰스토리</title>
+<link rel="stylesheet" href="../css/common.css">
+<link rel="stylesheet" href="../css/mainUI.css">
+<script src="../js/jquery-1.11.2.min.js"></script>
+<script src="../js/mainUI.js"></script>
+<script src="../js/jquery.bxslider.js"></script>
+<script>
+	$(function(){
+		$('.bxslider').bxSlider({
+			auto: false,
+			pager: false,
+			prevText: '이전카드',
+			nextText: '다음카드',
+		});
+		
+		$('.big_card li').hide();
+		$('.big_card li').click(function(){
+			$('.big_card li').hide();
+		});
+		
+		$('.barcode li a').click(function(){
+			var num = $(this).parent('li').index() - 1;
+			$('.big_card li').hide();
+			$('.big_card li:eq('+num+')').show();
+		});
+		
+		$('.barcode li').each(function(){
+			var bal = $(this).find('span').text();
+			$(this).find('span').text(add_comma(bal));
+		});
+		
+		h_resize();
+		$(window).resize(function(){
+			h_resize();
+		});
+		
+		function h_resize() {
+			var w_height = $(window).height() - 190;
+			$('.main').css('height', w_height);
+		};
+	});
+	
+	function add_comma(val){
+		return val.toString().replace(/\B(?=(\d{3})+(?!\d))/g, ",");
+	};
+</script>	
+</head>
+
+<body>
+<!-- 개발 작업시 삭제 -->
+<div class="ie8"><!-- 하위 브라우저 접속시 화면 -->
+	<img src="../img/img/img_logo.gif" width="195" height="60" alt="삼성웰스토리">
+	<p>
+    	본 어플리케이션 코딩 파일은 인터넷 익스플로러8 버전 이하의 브라우징을 지원하지 않습니다.<br>
+    	최신 브라우저로 업데이트해주시길 바랍니다.
+    </p>
+    <a href="http://windows.microsoft.com/ko-kr/interne t-explorer/download-ie/" target="_blank">인터넷 익스플로러 업데이트</a>
+</div>
+<!-- //개발 작업시 삭제 -->
+<div class="wrap">
+	<header>
+		<h1><a href="#">Welstory pay</a></h1>
+        <a class="menu" href="#">메뉴펼치기</a>
+        <nav>
+            <div>
+                <span><strong>김삼성</strong> 회원님<br>반갑습니다.
+            </div>
+            <ul>
+                <li><a href="#">카드관리</a></li>
+                <li><a href="#">이벤트</a></li>
+                <li>
+                    <a href="#">고객센터</a>
+                    <ul>
+                        <li><a href="#">공지사항</a></li>
+                        <li><a href="#">이용안내</a></li>
+                        <li><a href="#">FAQ</a></li>
+                        <li><a href="#">1:1문의하기</a></li>
+                    </ul>
+                </li>
+                <li>
+                    <a href="#">마이페이지</a>
+                    <ul>
+                        <li><a href="#">MY프로필</a></li>
+                        <li><a href="#">장바구니</a></li>
+                        <li><a href="#">거래내역</a></li>
+                    </ul>
+                </li>
+            </ul>
+            <a href="#">로그인</a>
+            <p>&copy;WELSTORY</p>
+        </nav>
+    </header>
+    <section class="main">
+    	<div class="card">
+        	<h2><span>Meal</span> Card</h2>
+            <p>바코드를 클릭하시면 확대됩니다.</p>
+            <!-- 카드보유 -->
+            <ul class="barcode bxslider">
+            	<li>
+                	<p class="num">9999 9999 9999 0001</p>
+                	<a href="#">
+                    	<img src="../img/sample/sample_barcode.gif" width='100%' alt="">
+                    </a>
+                    <p class="bal">잔액 : <span class="comma">999999999</span>원</p>
+                </li>
+                <li>
+                	<p class="num">9999 9999 9999 0002</p>
+                	<a href="#">
+                    	<img src="../img/sample/sample_barcode.gif" width='100%' alt="">
+                    </a>
+                    <p class="bal">잔액 : <span>999999999</span>원</p>
+                </li>
+                <li>
+                	<p class="num">9999 9999 9999 0003</p>
+                	<a href="#">
+                    	<img src="../img/sample/sample_barcode.gif" width='100%' alt="">
+                    </a>
+                    <p class="bal">잔액 : <span>999999999</span>원</p>
+                </li>
+            </ul>
+            <!-- //카드보유 -->
+            <!-- 카드없음 -->
+            <!--
+            <a class="regi" href="#">신규발급</a>
+            -->
+            <!-- //카드없음 -->
+            <!-- 로그인필요 -->
+            <!--
+            <a class="regi" href="#">로그인</a>
+            -->
+            <!-- //로그인필요 -->
+            <small>새로운 식문화 창조를 통해 건강한 Life Style을 만들어 갑니다.</small>
+            <a class="charge" href="#">충전하기</a>
+            <a class="present" href="#">선물하기</a>
+        </div>
+    </section>
+    <!-- 확대 카드 영역 -->
+    <ul class="big_card">
+    	<li>
+        	<div class="card_form">
+                <div>
+                    <img src="../img/sample/sample_barcode.gif" width='100%' alt="">
+                    <strong>9999 9999 9999 0001</strong>
+                </div>
+            </div>
+        </li>
+        <li>
+        	<div class="card_form">
+                <div>
+                    <img src="../img/sample/sample_barcode.gif" width='100%' alt="">
+                    <strong>9999 9999 9999 0002</strong>
+                </div>
+            </div>
+        </li>
+        <li>
+        	<div class="card_form">
+                <div>
+                    <img src="../img/sample/sample_barcode.gif" width='100%' alt="">
+                    <strong>9999 9999 9999 0003</strong>
+                </div>
+            </div>
+        </li>
+    </ul>
+    <!-- //확대 카드 영역 -->
+    <ul class="main_link">
+        <li><a href="#"><span>Menu<br>Finder</span><small>Welstory+</small></a></li>
+        <li><a href="#"><span>Smart<br>Order</span><small>모바일 주문<br>Pick-up</small></a></li>
+        <li><a href="#"><span>Welstory<br>Mall</span><small>Food, Lining, Life<br>Shoppingmall</small></a></li>
+    </ul>
+</div>
+
+</body>
+</html>

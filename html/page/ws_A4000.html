@@ -1,0 +1,113 @@
+<!doctype html>
+<html lang="ko">
+<head>
+<meta charset="utf-8">
+<meta http-equiv="X-UA-Compatible" content="IE=edge, chrome=1">
+<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, minimum-scale=1, user-scalable=no">
+<title>삼성웰스토리</title>
+<link rel="stylesheet" href="../css/common.css">
+<link rel="stylesheet" href="../css/mainUI.css">
+<script src="../js/jquery-1.11.2.min.js"></script>
+<script src="../js/mainUI.js"></script>
+<script src="../js/jquery.bxslider.js"></script>
+<script>
+	$(function(){
+		$('li').each(function(){
+			$(this).find('span.money').text(add_comma($(this).find('span.money').text()));
+		});
+ 	});
+	
+	function add_comma(val){
+		return val.toString().replace(/\B(?=(\d{3})+(?!\d))/g, ",");
+	};
+</script>
+</head>
+
+<body>
+<!-- 개발 작업시 삭제 -->
+<div class="ie8"><!-- 하위 브라우저 접속시 화면 -->
+	<img src="../img/img/img_logo.gif" width="195" height="60" alt="삼성웰스토리">
+	<p>
+    	본 어플리케이션 코딩 파일은 인터넷 익스플로러8 버전 이하의 브라우징을 지원하지 않습니다.<br>
+    	최신 브라우저로 업데이트해주시길 바랍니다.
+    </p>
+    <a href="http://windows.microsoft.com/ko-kr/interne t-explorer/download-ie/" target="_blank">인터넷 익스플로러 업데이트</a>
+</div>
+<!-- //개발 작업시 삭제 -->
+<div class="wrap">
+	<header>
+		<h1><span>주문확인</span></h1>
+        <a class="return" href="javascript:history.back();">이전페이지</a>
+        <a class="cart" href="#">장바구니</a>
+        <a class="menu" href="#">메뉴펼치기</a>
+        <nav>
+            <div>
+                <span><strong>김삼성</strong> 회원님<br>반갑습니다.
+            </div>
+            <ul>
+                <li><a href="#">카드관리</a></li>
+                <li><a href="#">이벤트</a></li>
+                <li>
+                    <a href="#">고객센터</a>
+                    <ul>
+                        <li><a href="#">공지사항</a></li>
+                        <li><a href="#">이용안내</a></li>
+                        <li><a href="#">FAQ</a></li>
+                        <li><a href="#">1:1문의하기</a></li>
+                    </ul>
+                </li>
+                <li>
+                    <a href="#">마이페이지</a>
+                    <ul>
+                        <li><a href="#">MY프로필</a></li>
+                        <li><a href="#">장바구니</a></li>
+                        <li><a href="#">거래내역</a></li>
+                    </ul>
+                </li>
+            </ul>
+            <a href="#">로그인</a>
+            <p>&copy;WELSTORY</p>
+        </nav>
+    </header>
+    <section class="order">
+    	<div class="upper_title type5">
+			<strong>주문확인 안내</strong>
+            <p>주문 메뉴 조리 완료 시 고객님의 휴대폰 번호로 SMS 문자가 발송되어 확인 가능합니다.</p>
+        </div>
+        <h2>주문내역</h2>
+        <ul class="order_info">
+        	<li><strong>주문번호</strong><span>999999999</span></li>
+            <li><strong>결제완료시간</strong>9999-99-99 99:99</li>
+            <li><strong>주문전송시간</strong>9999-99-99 99:99</li>
+        </ul>
+        <ul class="buy_list">
+            <li>
+                <h3>가츠엔<small>(삼성웰스토리 본사점)</small></h3>
+                <p>로스카츠정식</p>
+                <p>로스카츠정식</p>
+                <p>로스카츠정식</p>
+                <strong><span class="money">8000</span>원</strong>
+            </li>
+            <li>
+                <h3>기나긴이름기나긴이름기나긴이름기나긴이름기나긴이름기나긴이름기나긴이름<small>(기나긴이름기나긴이름기나긴이름기나긴이름기나긴이름기나긴이름기나긴이름기나긴이름기나긴이름기나긴이름)</small></h3>
+                <p>로스카츠정식</p>
+                <strong><span class="money">8000</span>원</strong>
+            </li>
+        </ul>
+        <ul class="total">
+            <li><strong>주문수량</strong><span>999</span>개</li>
+            <li><strong>총상품금액</strong><span class="money">999999</span>원</li>
+        </ul>
+		<ul class="progress">
+        	<li>주문완료</li>
+            <li class="on">조리중</li>
+            <li>조리완료</li>
+        </ul>
+		<div class="btn_area">
+            <a class="full orange" href="javascript:window.location.reload(true);">진행상태 조회</a>
+        </div>
+    </section>
+</div>
+
+</body>
+</html>
