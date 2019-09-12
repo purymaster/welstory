@@ -8,7 +8,7 @@
 
 2016-04 ~ 2016-05
 
-## 앱 다운로드 주소
+## 앱 다운로드주소
 
 ~~https://play.google.com/store/apps/details?id=com.websqrd.welstory.plus/~~ (개발 이슈로 인한 프로젝트 중단)
 
